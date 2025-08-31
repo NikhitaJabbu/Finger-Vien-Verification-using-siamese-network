@@ -15,14 +15,6 @@ Siamese CNN for finger-vein verification. The pipeline builds balanced positive/
 ├─ README.md
 └─ outputs_fv_siamese_fast/ # created on first run (model + logs)
 
-
-## Requirements
-- Python 3.9–3.11
-- TensorFlow 2.15+
-- Keras (standalone) 3.x
-- NumPy, Pillow, scikit-image
-
-
 ## Requirements
 - Python 3.9–3.11
 - TensorFlow 2.15+
@@ -38,7 +30,6 @@ source .venv/bin/activate
 # .venv\Scripts\activate
 pip install "tensorflow>=2.15" "keras>=3.0.0" numpy pillow scikit-image
 
-
 ## Data
 This project does not redistribute datasets. Place your images under data/(or any folder) and point the script to those paths.
 Supported image types: .bmp, .png, .jpg, .jpeg, .tif, .tiff
@@ -52,5 +43,3 @@ Load & index images by (subject, hand, finger).
 Streaming generator yields each batch with ~50% positives and ~50% negatives, mixing same-type and cross-type negatives for balance.
 Model learns L2-normalized embeddings per image; Euclidean distance is trained with contrastive loss.
 Evaluate on a fixed set of pairs and report accuracy at the configured threshold and the best threshold found via a simple sweep.
-
-pip install "tensorflow>=2.15" "keras>=3.0.0" numpy pillow scikit-image
